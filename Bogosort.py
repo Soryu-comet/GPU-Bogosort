@@ -26,7 +26,7 @@ except (ValueError, KeyboardInterrupt):
 # パフォーマンス測定用のバッチサイズの候補リスト
 TEST_BATCHES = list(range(100_000, 1_000_000, 100_000)) + list(range(1_000_000, 10_000_001, 1_000_000))
 
-# ==== GPU用配列を準備（メインループで再利用する） ====
+# GPU用配列を準備
 sorted_arr = cp.arange(ARRAY_SIZE, dtype=cp.int32).reshape(1, -1)
 
 def try_batch(batch_size, sync=False):
